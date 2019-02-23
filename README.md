@@ -11,7 +11,7 @@ APIs Consumed:
 
 - SmartyStreets ZipCode, for geocoding
 
-<img src="https://bit.ly/2TiQ2h6" width="15%">
+<img src="https://pbs.twimg.com/profile_images/428154467448389632/gOij3QhC_400x400.png" width="15%">
 
 - DarkSky Forecast, for weather data
 
