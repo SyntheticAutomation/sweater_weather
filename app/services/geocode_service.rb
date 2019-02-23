@@ -1,9 +1,9 @@
 class GeocodeService
 
   def self.retrieve_coordinates(zip)
-    get_uri('/lookup', zip)
+    get_uri('/lookup', zip)[0][:zipcodes][0]
   end
-  
+
   def self.get_uri(address, zip)
     response = engage_faraday.get(address) do |req|
       req.params['auth-id'] = ENV['smarty_streets_auth_id']
