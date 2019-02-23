@@ -7,14 +7,12 @@ Project Management
 
 APIs Consumed:
 
-<img src="https://bit.ly/2GVzKnH" width="50%">
-
+<img src="https://bit.ly/2GVzKnH" width="25%">
 - SmartyStreets ZipCode, for geocoding
-
-<img src="https://pbs.twimg.com/profile_images/428154467448389632/gOij3QhC_400x400.png" width="15%">
+<hr>
+<img src="https://pbs.twimg.com/profile_images/428154467448389632/gOij3QhC_400x400.png" width="7%">
 
 - DarkSky Forecast, for weather data
-
-<img src="https://bit.ly/2SnnkqK" width="10%">
-
+<hr>
+<img src="https://bit.ly/2SnnkqK" width="5%">
 - Flickr photos.search, for background image
