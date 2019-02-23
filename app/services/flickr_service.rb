@@ -22,13 +22,13 @@ class FlickrService
   end
 
   def self.map_photo_to_url(flickr_api_image)
-    data = {
+    pic = {
       :farm => flickr_api_image[:farm],
       :server => flickr_api_image[:server],
       :id => flickr_api_image[:id],
       :secret => flickr_api_image[:secret]
     }
-    "https://farm#{data[:farm]}.staticflickr.com/#{data[:server]}/#{data[:id]}_#{data[:secret]}.jpg"
+    "https://farm#{pic[:farm]}.staticflickr.com/#{pic[:server]}/#{pic[:id]}_#{pic[:secret]}.jpg"
   end
 
 end
