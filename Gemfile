@@ -25,7 +25,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'pry'
-  gem 'newrelic-rpm'
+  gem 'newrelic_rpm'
   gem 'omniauth'
   gem 'redis'
   gem 'turbolinks'
