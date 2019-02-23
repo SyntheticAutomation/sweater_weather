@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project Requirements: https://bit.ly/2TfKX92
 
-Things you may want to cover:
+Project Management
+- Waffle Board: https://waffle.io/SyntheticAutomation/sweater_weather
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+APIs:
+- MetropolisAPI (for geocoding)
+- DarkSky (for weather data)
+- Flickr (for background image)
