@@ -2,10 +2,10 @@
 
 <a href="https://bit.ly/2TfKX92" target="_blank">Project Requirements</a>
 
-Project Management
+## Project Management
 - Waffle Board: https://waffle.io/SyntheticAutomation/sweater_weather
 
-APIs Consumed:
+## APIs Consumed:
 
 <img src="https://bit.ly/2GVzKnH" width="25%">
 - SmartyStreets ZipCode, for geocoding
