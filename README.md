@@ -1,6 +1,6 @@
 # README
 
-<a href="https://bit.ly/2TfKX92" target="_blank">Project Requirements</a>
+<a href="https://bit.ly/2TfKX92" target="_blank">Click Here to View Project Requirements</a>
 
 ## Project Management
 - Waffle Board: https://waffle.io/SyntheticAutomation/sweater_weather
