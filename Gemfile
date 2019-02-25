@@ -13,6 +13,7 @@ gem 'vcr'
 gem 'webmock'
 gem 'rspec-rails'
 gem 'fast_jsonapi'
+gem 'bcrypt'
 
 
 group :development, :test do
