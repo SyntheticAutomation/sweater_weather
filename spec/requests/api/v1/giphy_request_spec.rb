@@ -6,7 +6,6 @@ describe 'giphy api' do
 
     expect(response).to be_successful
     parsed_gifs = JSON.parse(response.body)
-    require "pry"; binding.pry
-    expect(parsed_gifs["data"]["attributes"]["city"]).to eq("denver")
+    expect(parsed_gifs["data"]["attributes"]["images"][0]["time"].class).to eq(Integer)
   end
 end
