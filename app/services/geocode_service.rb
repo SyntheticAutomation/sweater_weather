@@ -2,7 +2,7 @@ class GeocodeService
 
   def self.retrieve_coordinates(city, state)
     response = get_uri('/lookup', city, state)
-    response[0][:zipcodes].find { |zipcode| zipcode[:default_city] == "Denver" }
+    response[0][:zipcodes].find { |zipcode| zipcode[:default_city] == "#{city.gsub('%20', ' ').titlecase}" }
   end
 
   def self.get_uri(address, city, state)
