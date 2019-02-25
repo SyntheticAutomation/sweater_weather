@@ -37,6 +37,8 @@ class Forecast
       "cloudy+forecast"
     elsif summary.downcase.include?("rain")
       "rain"
+    elsif summary.downcase.include?("foggy")
+      "foggy"
     else
       summary.gsub(' ', '+')
     end
