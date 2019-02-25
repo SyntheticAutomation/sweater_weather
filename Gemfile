@@ -12,8 +12,7 @@ gem 'faraday'
 gem 'vcr'
 gem 'webmock'
 gem 'rspec-rails'
-gem 'haml'
-
+gem 'fast_jsonapi'
 
 
 group :development, :test do
