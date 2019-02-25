@@ -7,6 +7,5 @@ describe 'account creation endpoint' do
     expect(response).to be_successful
     parsed_response = JSON.parse(response.body)
     expect(parsed_response["data"]["attributes"]["api_key"].class).to eq(String)
-    User.last.destroy
   end
 end
