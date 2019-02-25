@@ -1,11 +1,12 @@
 class Forecast
 
-  attr_reader :city, :state, :id
+  attr_reader :city, :state, :id, :copyright
 
   def initialize(city, state)
     @city = city
     @state = state
     @id = generate_weather_data[:currently][:time]
+    @copyright = Date.today.year
   end
 
   def coordinates
@@ -14,6 +15,31 @@ class Forecast
 
   def generate_weather_data
     DarkskyService.retrieve_weather(coordinates[:latitude], coordinates[:longitude])
+  end
+
+  def images
+    days_array.each do |day|
+      new_word = designate_search_word(day[:summary])
+      day[:url] = GiphyService.retrieve_gif(new_word)
+    end
+  end
+
+  def days_array
+    generate_weather_data[:daily][:data].map do |day|
+      {time: day[:time], summary: day[:summary]}
+    end
+  end
+
+  def designate_search_word(summary)
+    if summary.downcase.include?("snow")
+      "snow"
+    elsif summary.downcase.include?("cloudy")
+      "cloudy+forecast"
+    elsif summary.downcase.include?("rain")
+      "rain"
+    else
+      summary.gsub(' ', '+')
+    end
   end
 
   def right_now
