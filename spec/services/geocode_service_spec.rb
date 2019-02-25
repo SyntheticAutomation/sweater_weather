@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe GeocodeService do
   it 'can make calls', :vcr do
-    response = GeocodeService.retrieve_coordinates(80224)
-    expect(response[:zipcode]).to eq("80224")
+    response = GeocodeService.retrieve_coordinates("denver", "co")
+    expect(response[:default_city]).to eq("Denver")
     latitude = response[:latitude]
     longitude = response[:longitude]
-    expect(latitude).to eq(39.6909)
-    expect(longitude).to eq(-104.91112)
+    expect(latitude.class).to eq(Float)
+    expect(longitude.class).to eq(Float)
   end
 end
