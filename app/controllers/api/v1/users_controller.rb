@@ -14,7 +14,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
 
-  def current_time
+  def current_time # if you want to use a flash message in mod 4
     Time.now.strftime("%d/%m/%Y %H:%M")
   end
 
