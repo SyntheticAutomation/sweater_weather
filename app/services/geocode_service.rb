@@ -24,8 +24,8 @@ class GeocodeService
     Location.create(
       city: location.split(",")[0],
       state: location[-2..-1],
-      latitude: response[:results][0][:geometry][:location][:latitude],
-      longitude: response[:results][0][:geometry][:location][:longitude]
+      latitude: response[:results][0][:geometry][:location][:lat],
+      longitude: response[:results][0][:geometry][:location][:lng]
     )
   end
 
