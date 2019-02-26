@@ -8,12 +8,8 @@ class Forecast
     @copyright = Date.today.year
   end
 
-  def coordinates
-    GeocodeService.retrieve_coordinates(@location)
-  end
-
   def generate_weather_data
-    DarkskyService.retrieve_weather(coordinates[:lat], coordinates[:lng])
+    DarkskyService.retrieve_weather(location)
   end
 
   def images
