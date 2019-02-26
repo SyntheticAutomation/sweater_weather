@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'login endpoint' do
-  it 'can create a session for an existing user' do
+  it 'can create a session for an existing user', :vcr do
     key = SecureRandom.urlsafe_base64
     email = Faker::Internet.email
     user = User.create(email: email, password: "password", api_key: key)

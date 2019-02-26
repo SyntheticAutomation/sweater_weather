@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'forecast api' do
-  it 'sends forecast with params' do
+  it 'sends forecast with params', :vcr do
     get '/api/v1/forecast?location=denver,co'
 
     expect(response).to be_successful
