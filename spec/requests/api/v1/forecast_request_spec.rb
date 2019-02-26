@@ -6,6 +6,6 @@ describe 'forecast api' do
 
     expect(response).to be_successful
     forecast = JSON.parse(response.body)
-    expect(forecast["data"]["attributes"]["city"]).to eq("denver")
+    expect(forecast["data"]["attributes"]).to have_key("location")
   end
 end

@@ -1,20 +1,15 @@
 class Forecast
 
-  attr_reader :city, :state, :id, :copyright
+  attr_reader :location, :id, :copyright
 
-  def initialize(city, state)
-    @city = city
-    @state = state
+  def initialize(location)
+    @location = location
     @id = generate_weather_data[:currently][:time]
     @copyright = Date.today.year
   end
 
-  def coordinates
-    GeocodeService.retrieve_coordinates(@city, @state)
-  end
-
   def generate_weather_data
-    DarkskyService.retrieve_weather(coordinates[:latitude], coordinates[:longitude])
+    DarkskyService.retrieve_weather(location)
   end
 
   def images

@@ -1,7 +1,8 @@
 class DarkskyService
 
-  def self.retrieve_weather(latitude, longitude)
-    get_uri("/forecast/#{ENV['darksky_secret']}/#{latitude},#{longitude}")
+  def self.retrieve_weather(location)
+    coordinates = GeocodeService.retrieve_coordinates(location)
+    get_uri("/forecast/#{ENV['darksky_secret']}/#{coordinates[:lat]},#{coordinates[:lng]}")
   end
 
   def self.get_uri(address)
@@ -14,5 +15,5 @@ class DarkskyService
       faraday.adapter Faraday.default_adapter
     end
   end
-  
+
 end
