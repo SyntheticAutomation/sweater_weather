@@ -21,6 +21,4 @@ class GeocodeService
     end
   end
 
-
-
 end
