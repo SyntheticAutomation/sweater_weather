@@ -36,7 +36,7 @@ describe 'favorites endpoint' do
     get "/api/v1/favorites?api_key=#{user.api_key}"
     expect(response).to be_successful
     parsed_list = JSON.parse(response.body, symbolize_names: true)
-    expect(parsed_list[:data][0]][:attributes][:location]).to eq('miami,fl')
+    expect(parsed_list[:data][0][:attributes][:location]).to eq('miami,fl')
     expect(parsed_list[:data][1][:attributes][:location]).to eq('denver,co')
     expect(parsed_list[:data][1][:attributes][:current_weather][:summary].class).to eq(String)
   end
@@ -51,6 +51,19 @@ describe 'favorites endpoint' do
     post "/api/v1/favorites"
 
     expect(status).to be(401)
+  end
+
+  it 'can delete a favorite and return the deleted item' do
+    key = SecureRandom.urlsafe_base64
+    email = Faker::Internet.email
+    user = User.create(email: email, password: "password", api_key: key)
+    post "/api/v1/favorites?location=miami,fl&api_key=#{key}"
+    post "/api/v1/favorites?location=denver,co&api_key=#{key}"
+    delete "/api/v1/favorites?location=miami,fl&api_key=#{key}"
+
+    expect(response).to be_successful
+    parsed_response = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed_response[:location]).to eq("miami,fl")
   end
 
 end
