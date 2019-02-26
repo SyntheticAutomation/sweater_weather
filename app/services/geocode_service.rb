@@ -1,22 +1,20 @@
 class GeocodeService
 
-  def self.retrieve_coordinates(city, state)
-    response = get_uri('/lookup', city, state)
-    response[0][:zipcodes].find { |zipcode| zipcode[:default_city] == "#{city.gsub('%20', ' ').titlecase}" }
+  def self.retrieve_coordinates(location)
+    response = get_uri('/maps/api/geocode/json?', location)
+    response[:results][0][:geometry][:location]
   end
 
-  def self.get_uri(address, city, state)
+  def self.get_uri(address, location)
     response = engage_faraday.get(address) do |req|
-      req.params['auth-id'] = ENV['smarty_streets_auth_id']
-      req.params['auth-token'] = ENV['smarty_streets_auth_token']
-      req.params['city'] = city
-      req.params['state'] = state
+      req.params['address'] = location
+      req.params['key'] = ENV['google_geocode_key']
     end
     JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.engage_faraday
-    Faraday.new(url: "https://us-zipcode.api.smartystreets.com") do |faraday|
+    Faraday.new(url: "https://maps.googleapis.com") do |faraday|
       faraday.adapter Faraday.default_adapter
     end
   end
