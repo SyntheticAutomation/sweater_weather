@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get '/forecast', to: "forecast#index"
       resources :gifs, only: [:index]
       resources :users, only: [:create]
+      resources :sessions, only: [:new, :create, :destroy]
     end
   end
 
