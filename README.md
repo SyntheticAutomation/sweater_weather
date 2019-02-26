@@ -2,6 +2,10 @@
 
 <a href="https://bit.ly/2TfKX92" target="_blank">Click Here to View Project Requirements</a>
 
+API is deployed at `https://rocky-cliffs-95700.herokuapp.com/`
+but since there isn't a front end for this project, you'll want to enter endpoints directly.
+try: `https://rocky-cliffs-95700.herokuapp.com/api/v1/forecast?location=denver,co`
+
 ## Project Management
 - Waffle Board: https://waffle.io/SyntheticAutomation/sweater_weather
 
