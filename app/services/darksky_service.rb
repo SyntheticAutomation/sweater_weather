@@ -1,19 +1,7 @@
 class DarkskyService
 
-  def self.stored?(location)
-    Location.exists?(city: location.split(",")[0], state: location[-2..-1])
-  end
-
-  def self.get_coords(location)
-    Location.find_by(city: location.split(",")[0], state: location[-2..-1])
-  end
-
   def self.retrieve_weather(location)
-    if stored?(location)
-      coordinates = {lat: get_coords(location).latitude, lng: get_coords(location).longitude}
-    else
-      coordinates = GeocodeService.retrieve_coordinates(location)
-    end
+    coordinates = GeocodeService.retrieve_coordinates(location)
     get_uri("/forecast/#{ENV['darksky_secret']}/#{coordinates[:lat]},#{coordinates[:lng]}")
   end
 

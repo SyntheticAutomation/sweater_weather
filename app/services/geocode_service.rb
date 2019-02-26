@@ -1,10 +1,24 @@
 class GeocodeService
 
   def self.retrieve_coordinates(location)
+    if stored?(location)
+      object = Location.find_by(city: location.split(",")[0], state: location[-2..-1])
+      { lat: object.latitude, lng: object.longitude }
+    else
+      make_the_call(location)
+    end
+  end
+
+  def self.make_the_call(location)
     response = get_uri('/maps/api/geocode/json?', location)
     save_location_data(response, location)
     response[:results][0][:geometry][:location]
   end
+
+  def self.stored?(location)
+    Location.exists?(city: location.split(",")[0], state: location[-2..-1])
+  end
+
 
   def self.get_uri(address, location)
     response = engage_faraday.get(address) do |req|
