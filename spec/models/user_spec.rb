@@ -8,6 +8,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'relationships' do
+    it { should have_many(:favorites) }
   end
 
   describe 'class methods' do

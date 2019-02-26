@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'account creation endpoint' do
-  it 'sends api_key' do
+  it 'can create a new user' do
     email = Faker::Internet.email
     post "/api/v1/users?email=#{email}&password=password&password_confirmation=password"
     expect(response).to be_successful
