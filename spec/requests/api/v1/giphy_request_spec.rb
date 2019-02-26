@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'giphy api' do
-  it 'sends gifs with params' do
+  it 'sends gifs with params', :vcr do
     get '/api/v1/gifs?location=denver,co'
 
     expect(response).to be_successful

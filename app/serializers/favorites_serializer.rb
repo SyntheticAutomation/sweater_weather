@@ -1,4 +1,4 @@
 class FavoritesSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :location
+  attributes :location, :current_weather
 end

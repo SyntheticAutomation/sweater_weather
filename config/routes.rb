@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :gifs, only: [:index]
       resources :users, only: [:create]
       resources :sessions, only: [:new, :create, :destroy]
-      resources :favorites, only: [:create]
+      resources :favorites, only: [:create, :index]
     end
   end
 
