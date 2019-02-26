@@ -17,4 +17,9 @@ describe 'favorites endpoint' do
 
     expect(status).to be(401)
   end
+  it 'returns 401 when no api_key given' do
+    post "/api/v1/favorites?location=miami,fl"
+
+    expect(status).to be(401)
+  end
 end
