@@ -56,18 +56,18 @@ Run `rails s` and visit http://localhost:3000/api/v1/forecast?location=denver,co
 
 ## Tools & Technologies
 #### Gems
--Faraday
--BCrypt
--Figaro
--VCR
--Webmock
--RSpec + Capybara
--Netflix's fast_jsonapi
--Simplecov (you can check coverage by running rspec, then typing `open coverage/index.html`)
--Shoulda-matchers
--Faker
+- Faraday
+- BCrypt
+- Figaro
+- VCR
+- Webmock
+- RSpec + Capybara
+- Netflix's fast_jsonapi
+- Simplecov (you can check coverage by running rspec, then typing `open coverage/index.html`)
+- Shoulda-matchers
+- Faker
 #### Tech
--Ruby on Rails
--PostgreSQL
--JSON
--Heroku
+- Ruby on Rails
+- PostgreSQL
+- JSON
+- Heroku
