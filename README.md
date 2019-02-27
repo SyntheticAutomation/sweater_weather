@@ -53,6 +53,8 @@ Run `rails s` and visit http://localhost:3000/api/v1/forecast?location=denver,co
   - `GET /api/v1/favorites?location=<city,state here>&api_key=<your_api_key_here>`
 - Remove Favorite From List - hitting this endpoint physically removes a favorited location from the user's list in the database.
   - `DELETE /api/v1/favorites?location=<city,state here>&api_key=<your_api_key_here>`
+- Flickr Background Image - returns a URL of an image from the requested area
+  - `GET /api/v1/backgrounds?location=<city,state here>`
 
 ## Tools & Technologies
 #### Gems
