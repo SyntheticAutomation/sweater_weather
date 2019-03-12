@@ -11,7 +11,7 @@ Run `git clone https://github.com/SyntheticAutomation/sweater_weather.git` in yo
 
 Run `bundle` to install gems and libraries.
 
-Run `rails s` and visit http://localhost:3000/api/v1/forecast?location=denver,co in your browser.
+Run `rails s` and visit http://localhost:3000/<endpoint_here> in your browser.
 
 ## Project Management
 - Waffle Board: https://waffle.io/SyntheticAutomation/sweater_weather
