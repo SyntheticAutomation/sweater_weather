@@ -14,6 +14,7 @@ gem 'webmock'
 gem 'rspec-rails'
 gem 'fast_jsonapi'
 gem 'bcrypt'
+gem 'rack-cors'
 
 
 group :development, :test do
